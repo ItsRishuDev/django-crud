@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+#Database Model for Empolyee
 class Empolyee(models.Model):
     emp_id = models.AutoField(primary_key=True)
     emp_name = models.CharField(max_length=250)

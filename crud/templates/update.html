@@ -12,6 +12,7 @@ Update
       <div class="col-md-6 col-sm-8 col-10 offset-md-3 offset-sm-2 offset-1">
         <form class="border-secondary px-4 py-3" method="POST" action="">
           {% csrf_token %}
+          <!-- show employee previous data  -->
           {% for employee in employees %}
           <div class="form-group mt-3">
             <label for="name" class="form-label">Name</label>

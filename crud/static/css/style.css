@@ -1,0 +1,39 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+form,input {
+    border: 1.5px solid grey !important;
+}
+
+.company, .task{
+    color: white;
+}
+
+.company:hover{
+    color: teal;
+}
+
+.task:hover{
+    color: teal;
+}
+
+.login-button{
+    margin-right: 2px;
+}
+
+.register-button{
+    margin-left: 2px;
+}
+
+.user-name{
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.user-name:hover{
+    color: teal;
+}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock title %}
+
+{% block body %}
+<main>
+        <div class="container mt-5">
+
+            <h2 class="text-center mb-3">Register</h2>
+
+            <div class="row">
+                <div class="col-md-6 col-sm-8 col-10 offset-md-3 offset-sm-2 offset-1">
+                    <form action="" method='POST' class="border-secondary px-4 py-3">
+                    {% csrf_token %}
+                        <div class="form-group mt-3">
+                            <label for="name" class="col-form-label">Name</label>
+                            <input type="text" class="form-control rounded-0" id="name" name="name"
+                                placeholder="Name..." required />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="email_address" class="col-form-label">Email Address</label>
+                            <input type="email" id="email_address" class="form-control rounded-0" name="email"
+                                placeholder="user@gmail.com" required />
+                        </div>
+                        
+                        <div class="form-group mt-3">
+                            <label for="password" class="col-form-label">Password</label>
+                            <input type="password" class="form-control rounded-0" id="password" name="password"
+                                placeholder="Password" required />
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <input type="submit" value="SUBMIT" class="btn btn-block btn-secondary rounded-0" />
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock body %}
+
+{% block jQuery %}
+    <script>
+        $(document).ready(() => {
+
+            $('#date_picker').datepicker({
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true,
+                maxDate: "0D 0M 0Y", // D, M, Y, W
+                minDate: "-73Y"
+            });
+        });
+    </script>
+{% endblock jQuery %}

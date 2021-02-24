@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Update
+{% endblock title %}
+
+{% block body %}
+<main>
+  <div class="container my-5">
+    <h2 class="text-center mb-3">Update Employee</h2>
+    <div class="row">
+      <div class="col-md-6 col-sm-8 col-10 offset-md-3 offset-sm-2 offset-1">
+        <form class="border-secondary px-4 py-3" method="POST" action="">
+          {% csrf_token %}
+          {% for employee in employees %}
+          <div class="form-group mt-3">
+            <label for="name" class="form-label">Name</label>
+            <input name='name' type="text" value={{employee.emp_name}} class="form-control rounded-0" id="name">
+          </div>
+          
+          <div class="form-group mt-3">
+            <label for="email" class="form-label">Email</label>
+            <input name='email' type="email" value={{employee.emp_email}} class="form-control rounded-0" id="email">
+          </div>
+          
+          <div class="form-group mt-3">
+            <label for="contact" class="form-label">Contact</label>
+            <input name='contact' type="number" value={{employee.emp_contact}} class="form-control rounded-0"
+              id="contact">
+          </div>
+          
+          <div class="form-group mt-3">
+            <label for="inputGender" class="form-label">Gender</label>
+            <select name="gender" id="inputGender" class="form-select form-control rounded-0">
+              <option selected value={{employee.emp_gender}}>{{employee.emp_gender}}</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group mt-3">
+            <label for="date_picker" class="col-form-label">Date of Birth</label>
+            <input type="date" value={{date}} class="form-control rounded-0" name="date" id="date_picker"
+              required />
+          </div>
+          
+          <div class="form-group mt-3">
+            <button type="submit" class="btn btn-block text-white btn-primary rounded-0">Update</button>
+          </div>
+          {% endfor %}
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock body %}
